@@ -33,7 +33,7 @@ const App = () => {
       setSalaries([])
     }
     catch (exception) {
-      notificationHandler(`Log in failed, check username entered`, 'error')
+      notificationHandler(`Log in failed, Please check email id and password entered.`, 'error')
     }
   }
 
