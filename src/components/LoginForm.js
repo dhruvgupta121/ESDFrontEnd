@@ -3,15 +3,23 @@ import React, { useState } from 'react'
 const LoginForm = ({ startLogin }) => {
     const [ email, setEmail ] = useState('')
 
+    const [ password, setPassword ] = useState('')
+
     const handleLogin = (event) => {
-        event.preventDefault()
+
+     
+      event.preventDefault()
+      
 
     const credentials = {
-      email
+      email, password
     }
+
+    
 
     startLogin(credentials)
     setEmail('')
+    setPassword('')
   }
 
   return (
@@ -24,6 +32,20 @@ const LoginForm = ({ startLogin }) => {
             id='email'
             required
         />
+
+<br/>
+<br/>
+<input 
+            type='password'
+            placeholder='Password'
+            value={password}
+            onChange={event => setPassword(event.target.value)}
+            id='password'
+            required
+        />
+
+<br/>
+<br/>
 
         <button type='submit' id='login-submit'>LOGIN</button>
     </form>
